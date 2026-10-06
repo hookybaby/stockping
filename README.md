@@ -2,7 +2,7 @@
 
 监控 Apple Store 门店的 iPhone 取货库存，有货立刻提醒。
 
-- 官网：https://www.plegle.uk
+- 官网：https://stockping.plegle.uk
 - 下载：见 [Releases](https://github.com/hookybaby/stockping/releases)
 
 桌面应用（Electron，macOS / Windows），本地运行，数据不出本机，全部功能免费。
