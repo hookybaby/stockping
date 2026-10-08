@@ -6,15 +6,15 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.3**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.4**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.3-universal.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.3/StockPing-0.2.3-universal.dmg) | Apple 芯片和 Intel Mac，macOS 10.15 及以上 |
-| Windows 安装版 | [StockPing.Setup.0.2.3.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.3/StockPing.Setup.0.2.3.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.3-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.3/StockPing-0.2.3-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.4-universal.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.4/StockPing-0.2.4-universal.dmg) | Apple 芯片和 Intel Mac，macOS 10.15 及以上 |
+| Windows 安装版 | [StockPing.Setup.0.2.4.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.4/StockPing.Setup.0.2.4.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.4-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.4/StockPing-0.2.4-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
@@ -55,7 +55,7 @@ Standard 和 Pro 的通知渠道相同；Pro 提供更多监控组合。Standard
 - 库存矩阵按「颜色 × 容量」展示，并列出有货门店；也可查看门店维度的结果。
 - 区分「有货」「无货」「未知」与请求失败，不把未返回结果或网络错误当成无货。
 - 中国大陆可直接查询其他城市的 Apple Store，无需为每个城市配置代理。
-- 一键打开对应地区的 Apple 购买页或购物袋，在浏览器中自行选择取货门店并完成购买。
+- 查询有货后可点击「购买此配置」，直接打开对应地区的 Apple 型号、颜色和容量购买页，减少重新选配置的步骤；目录信息不足时打开型号页。监控列表与到货自动打开也使用同一入口。取货门店和付款仍在 Apple 浏览器页面完成，库存以结账页为准。
 
 Apple 的库存随时可能变化。其他地区的可查询范围取决于 Apple 接口实际返回的门店；没有确认结果时会显示「未知」。
 
@@ -109,6 +109,8 @@ Apple 的库存随时可能变化。其他地区的可查询范围取决于 Appl
 - 统计依赖你的监控历史；它不是 Apple 的补货计划，也不预测或保证未来库存。
 
 ### 6. 设置与诊断
+
+「版本与购买」位于设置最上方，可直接购买、输入邮箱收到的激活码、复检授权或解绑设备。
 
 - 简体中文、繁体中文、英文界面，可随时切换。
 - 配置查询间隔、并发、超时、通知冷却和免打扰时段。
