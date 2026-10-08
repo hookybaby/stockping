@@ -6,7 +6,7 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.1**。从本版开始，免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.2**。从本版开始，免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
 ## 下载与安装
 
@@ -36,11 +36,11 @@ Windows：运行安装包，按提示选择安装位置；或下载便携版直�
 | 监控组合数量上限 | 0 | **50** | **500** |
 | 桌面到货通知 | 不支持 | 支持 | 支持 |
 | 八个外部通知渠道 | 可保存未启用配置 | 全部支持 | 全部支持 |
-| 同时授权设备数 | — | **1 台** | **2 台** |
+| 同时授权设备数 | — | **1 台** | **1 台** |
 
 **一个监控组合 = 一个地区的一家门店 + 一个 SKU。** 例如，同一家店的银色 256GB 和银色 512GB 占两个组合；同一 SKU 在两家店监控，也占两个组合。
 
-Standard 和 Pro 的通知渠道相同；Pro 提供更多监控组合和第二台设备授权。Standard 升至 Pro 目前需要单独购买 HK$99.90 的 Pro 授权，**不自动抵扣 Standard 费用**。
+Standard 和 Pro 的通知渠道相同；Pro 提供更多监控组合。Standard 升至 Pro 目前需要单独购买 HK$99.90 的 Pro 授权，**不自动抵扣 Standard 费用**。
 
 如果解绑、退款、授权撤销或离线宽限期结束，软件会回到免费版。已有提醒和历史数据保留，但自动监控与通知暂停；重新取得有效付费授权后才能恢复。授权需要定期联网验证，断网时在有效授权及宽限期内仍可使用。
 
@@ -122,35 +122,37 @@ Apple 的库存随时可能变化。其他地区的可查询范围取决于 Appl
 
 1. 下载并启动软件，在「库存查询」选择地区、门店、机型和容量。
 2. 点击「查询现货」查看结果。免费版可以完成这一步。
-3. 如需到货提醒，进入「设置 → 版本与购买」，购买 Standard 或 Pro 并领取授权。
+3. 如需到货提醒，进入「设置 → 版本与购买」，购买 Standard 或 Pro，输入邮件中的激活码。
 4. 回到库存查询，点击「准备添加监控」，勾选所需组合并确认添加。
 5. 在「我的提醒」启动引擎，配置桌面通知或自定义通知渠道，并保持软件与网络运行。
 6. 收到提醒后，打开 Apple 购买页确认最新库存并自行结账。
 
+联系开发者与购买售后：[support@plegle.uk](mailto:support@plegle.uk)。
+
 ## 购买、激活与换机
 
-**请从软件内发起购买**，以便把订单关联到当前设备；不要把旧打赏链接当成授权购买入口。
+可从[官网](https://stockping.plegle.uk/#pricing)或软件设置发起购买。打开付款页不会锁定版本，也不会激活授权。
 
-1. 进入「设置 → 版本与购买」，选择 Standard 或 Pro。
-2. 软件打开 Stripe 结账页，完成一次性付款。
-3. 返回软件，点击 **「我已付款，领取授权」**。
-4. 授权成功后，该页面会显示付费方案和激活码。已有激活码也可在这里输入并激活。
+1. 选择 Standard 或 Pro，在 Stripe 结账页填写并核对收码邮箱。
+2. 完成一次性付款；服务器确认到账后，将激活码发送至该邮箱。
+3. 检查收件箱和垃圾邮件，在「设置 → 版本与购买」输入激活码。
+4. 首次激活时才绑定电脑，不需要注册账号。
 
-Standard 最多绑定一台设备，Pro 最多绑定两台。换机前，在旧设备的设置里点击「解绑本机」，再到新设备输入激活码。旧设备无法使用时，可联系开发者处理设备绑定。
+**新购买的 Standard 和 Pro 都是一枚码同时绑定一台电脑。** 换机前在旧电脑点击「解绑本机」，再到新电脑输入同一个码。旧电脑无法使用时，联系支持核实购买后重置绑定。历史已购买授权保留原权益。旧版已创建的订单，在新版中仍可通过「恢复旧版购买」领取。
 
-### 已付款但没有激活
+### 已付款但没有收到码或激活失败
 
-- 返回发起购买的同一台电脑，确认联网，再点击「我已付款，领取授权」。
-- Stripe 延迟确认或回调重试可能需要时间；**不要重复付款**。
-- 保留 Stripe 收据或付款编号、软件显示的订单编号和错误提示，联系开发者核实。
-- 开发者可以重试支付回调、手动补发授权、重置设备绑定或撤销异常授权。
-- 在公开 Issues 中只描述问题，**不要公开激活码、付款收据、邮箱或通知渠道密钥**。
+- 检查 Stripe 填写的邮箱和垃圾邮件；延迟付款确认或邮件处理可能需要时间，**不要重复付款**。
+- 保留 Stripe 收据或付款编号、收码邮箱和错误提示，联系支持核实。
+- 开发者可查询邮件提交状态、补发同一个激活码、重置绑定或撤销授权；补发不产生第二份授权。
+- 完整退款或争议会撤销对应授权，联网验证后停止付费功能；离线电脑不会立即收到撤销状态。
+- 在公开 Issues 中只描述问题，**不要公开激活码、收据、邮箱或通知渠道密钥**。
 
 ## 隐私与数据
 
 库存结果、门店与机型数据、提醒记录和设置保存在本机。敏感通知配置加密保存，备份文件仍应自行妥善保管。
 
-软件向 Apple 请求库存；外部通知只发往你配置的渠道。购买、领取及验证授权时，会向授权服务发送订单标识、机器指纹和授权凭证。Stripe 处理付款，软件不读取你的银行卡信息。没有账号注册流程，也不会替你登录 Apple ID。
+软件向 Apple 请求库存；外部通知只发往你配置的渠道。Stripe 收集付款邮箱并处理付款，软件不读取银行卡信息。授权服务保存付款与邮箱用于发码和售后；Oqumail 接收收件邮箱及激活码以发送邮件。激活和验证时，软件向授权服务发送激活码、机器指纹和授权凭证。没有账号注册流程，也不会替你登录 Apple ID。
 
 ## 常见问题
 
@@ -189,11 +191,13 @@ StockPing checks iPhone pickup availability at Apple retail stores on macOS and 
 Free supports manual and cross-city stock queries only. Adding alerts, automatic monitoring and restock notifications require a paid license:
 
 - **Standard: HK$49.90 once** — 50 store × SKU combinations, one device.
-- **Pro: HK$99.90 once** — 500 combinations, two devices.
+- **Pro: HK$99.90 once** — 500 combinations, one device.
 - Both include desktop notifications and all eight external channels. No recurring billing.
 
-Purchase from **Settings → Plans & purchase**, then return to the app and click **“I have paid — claim license”**. Keep your activation code private. Unlink an old device before moving to another computer. If payment succeeded but activation did not, keep the receipt, app order reference and error message, and contact the developer without paying again.
+Purchase from the website or **Settings → Plans & purchase**, enter your email at Stripe checkout, then activate in the app with the emailed code. Keep the code private. Unbind the old computer before moving it. If payment succeeded but activation did not, keep the Stripe receipt, payment reference and error message, and contact [support@plegle.uk](mailto:support@plegle.uk) without paying again.
 
 Monitoring runs locally and requires the computer, app and network to remain active. StockPing cannot reserve stock or place orders. Apple responses may be incomplete; unknown availability is never treated as out of stock.
 
 [Website](https://stockping.plegle.uk) · [Latest release](https://github.com/hookybaby/stockping/releases/latest) · [Report a problem](https://github.com/hookybaby/stockping/issues)
+
+Version 0.2.2: purchase on the website or in the app, enter your email at Stripe checkout, and activate with the emailed code. Each newly purchased Standard or Pro code binds to one computer at a time. Unbind before moving it. Existing purchases retain their original rights.
