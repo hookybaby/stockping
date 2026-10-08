@@ -5,7 +5,7 @@
 - 官网：https://stockping.plegle.uk
 - 下载：见 [Releases](https://github.com/hookybaby/stockping/releases)
 
-桌面应用（Electron，macOS / Windows），本地运行，数据不出本机，全部功能免费。
+桌面应用（Electron，macOS / Windows），本地运行，数据不出本机
 
 ## 版本
 
