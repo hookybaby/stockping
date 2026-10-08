@@ -1,15 +1,199 @@
-# StockPing（到货啦）
+# StockPing · 到货啦
 
-监控 Apple Store 门店的 iPhone 取货库存，有货立刻提醒。
+**Apple Store iPhone 门店取货库存查询、到货监控与提醒。支持 macOS 和 Windows。**
 
-- 官网：https://stockping.plegle.uk
-- 下载：见 [Releases](https://github.com/hookybaby/stockping/releases)
+[官方网站](https://stockping.plegle.uk) · [下载最新版](https://github.com/hookybaby/stockping/releases/latest) · [问题反馈](https://github.com/hookybaby/stockping/issues)
 
-桌面应用（Electron，macOS / Windows），本地运行，数据不出本机
+StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-## 版本
+当前版本：**0.2.1**。从本版开始，免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
-| 平台 | 文件 | 说明 |
+## 下载与安装
+
+| 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | `StockPing-<version>-arm64.dmg` | Apple 芯片（arm64），macOS 10.15+ |
-| Windows | `StockPing Setup <version>.exe` | 待发布 |
+| macOS | [StockPing-0.2.1-universal.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.1/StockPing-0.2.1-universal.dmg) | Apple 芯片和 Intel Mac，macOS 10.15 及以上 |
+| Windows 安装版 | [StockPing.Setup.0.2.1.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.1/StockPing.Setup.0.2.1.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.1-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.1/StockPing-0.2.1-portable.exe) | 无需安装，适合临时使用 |
+
+macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
+
+Windows：运行安装包，按提示选择安装位置；或下载便携版直接运行。Windows 包暂未提供代码签名，系统可能显示 SmartScreen 提示。请只从本项目 Release 下载，并核对该版本的 SHA-256 校验文件。
+
+更新入口位于软件「关于 → 检查更新」。下载后会打开系统安装程序，按安装向导完成更新；macOS 需将新应用替换到「应用程序」。更新前建议在设置中导出备份。卸载、换机或切换便携版前，也请先备份数据。
+
+## 免费版、Standard 与 Pro
+
+两个付费版本均为**一次性付款，无自动续费**。使用 Stripe 收款，授权由云端验证。
+
+| 功能 | 免费版 | StockPing Standard | StockPing Pro |
+| --- | --- | --- | --- |
+| 价格 | HK$0 | **HK$49.90，一次性** | **HK$99.90，一次性** |
+| 手动查询库存 | 支持 | 支持 | 支持 |
+| 中国大陆跨城市查询 | 支持，无需代理 | 支持，无需代理 | 支持，无需代理 |
+| 门店、机型与 SKU 管理 | 支持 | 支持 | 支持 |
+| 添加、启用和运行到货提醒 | 不支持 | 支持 | 支持 |
+| 监控组合数量上限 | 0 | **50** | **500** |
+| 桌面到货通知 | 不支持 | 支持 | 支持 |
+| 八个外部通知渠道 | 可保存未启用配置 | 全部支持 | 全部支持 |
+| 同时授权设备数 | — | **1 台** | **2 台** |
+
+**一个监控组合 = 一个地区的一家门店 + 一个 SKU。** 例如，同一家店的银色 256GB 和银色 512GB 占两个组合；同一 SKU 在两家店监控，也占两个组合。
+
+Standard 和 Pro 的通知渠道相同；Pro 提供更多监控组合和第二台设备授权。Standard 升至 Pro 目前需要单独购买 HK$99.90 的 Pro 授权，**不自动抵扣 Standard 费用**。
+
+如果解绑、退款、授权撤销或离线宽限期结束，软件会回到免费版。已有提醒和历史数据保留，但自动监控与通知暂停；重新取得有效付费授权后才能恢复。授权需要定期联网验证，断网时在有效授权及宽限期内仍可使用。
+
+## 软件功能
+
+### 1. 库存查询
+
+- 支持中国大陆、中国香港、中国台湾、日本、新加坡、美国六个地区。
+- 内置 340 家门店和 240 个地区 SKU 的基础数据，可同步或自行维护。
+- 按省份、城市或关键词查找门店，可同时选择多家门店。
+- 按机型、颜色和容量选择需要查询的配置。
+- 库存矩阵按「颜色 × 容量」展示，并列出有货门店；也可查看门店维度的结果。
+- 区分「有货」「无货」「未知」与请求失败，不把未返回结果或网络错误当成无货。
+- 中国大陆可直接查询其他城市的 Apple Store，无需为每个城市配置代理。
+- 一键打开对应地区的 Apple 购买页或购物袋，在浏览器中自行选择取货门店并完成购买。
+
+Apple 的库存随时可能变化。其他地区的可查询范围取决于 Apple 接口实际返回的门店；没有确认结果时会显示「未知」。
+
+### 2. 我的提醒与自动监控（Standard / Pro）
+
+- 点击「准备添加监控」，逐项选择所需的「门店 × SKU」组合。
+- 添加前查看每个组合的库存状态，支持搜索过滤、全选、清空选择和仅勾选有货项。
+- 已监控的组合会标出，避免重复添加；超出方案额度时提示上限。
+- 默认每 30 秒查询一轮，可在设置中调整间隔；失败时逐步延长重试间隔。
+- 在「我的提醒」查看运行状态、下一轮时间、最近查询结果和各组合状态。
+- 支持立即检查、启动或停止监控、单项启用或停用，以及删除或清空提醒。
+- 软件可在托盘后台运行，并按设置开机启动；电脑关机、睡眠或软件退出时不会继续监控。
+- 免费版的新增、重新启用和监控启动由主进程限制，托盘及开机自启也遵守授权状态。
+
+### 3. 到货通知（Standard / Pro）
+
+支持桌面系统通知，以及以下八个自定义渠道：
+
+| 渠道 | 用途与配置 |
+| --- | --- |
+| Telegram | Bot Token 与 Chat ID |
+| 飞书机器人 | Webhook，可选签名密钥 |
+| 邮箱 | SMTP，支持 SSL / STARTTLS 与登录认证 |
+| WhatsApp | WhatsApp Cloud API |
+| Bark | iOS 推送，支持官方或自建服务 |
+| 企业微信机器人 | 群机器人 Webhook |
+| 钉钉机器人 | Access Token，可选加签密钥 |
+| 通用 Webhook | 自定义 POST JSON 与鉴权请求头 |
+
+- 多个渠道可同时启用，并可分别发送测试通知。
+- 未启用时也可保存输入的渠道配置；免费版可以准备配置，购买后再启用。
+- 敏感字段加密保存在本机，输入框的小眼睛可显示或隐藏已保存内容。
+- 支持提醒冷却时间，减少重复推送。
+- 支持跨午夜的免打扰时段：继续记录库存变化，暂停通知和自动打开购买页。
+- 可设置发现到货时自动打开购买页；最终下单仍由用户在浏览器完成。
+
+通知渠道可能需要你自行创建机器人、配置 SMTP 或购买第三方服务；这些服务的费用不包含在软件价格中。
+
+### 4. 机型库与门店数据
+
+- 查看和管理机型、颜色、容量及 Apple 商品编号（partNumber）。
+- 从 Apple 购买页提取商品编号，或手动新增 SKU。
+- 支持 JSON 导入、导出与内置数据恢复。
+- 不同地区有独立的门店和商品编号，切换地区不会将原地区数据混用。
+
+### 5. 提醒记录与补货规律
+
+- 查看到货、售罄、通知发送和查询异常记录。
+- 搜索、筛选记录并导出 CSV。
+- 根据本机记录查看到货时段、门店补货频率及有货持续时间等统计。
+- 统计依赖你的监控历史；它不是 Apple 的补货计划，也不预测或保证未来库存。
+
+### 6. 设置与诊断
+
+- 简体中文、繁体中文、英文界面，可随时切换。
+- 配置查询间隔、并发、超时、通知冷却和免打扰时段。
+- 配置开机启动、关闭到托盘和最小化行为。
+- 可选代理设置；Windows 未填写自定义代理时使用系统网络代理配置。
+- 导出和导入备份，恢复监控、目录及设置；授权凭证不作为可迁移备份绕过设备绑定。
+- 提供网络诊断和诊断报告导出，便于反馈连接问题。
+- 在「关于」检查和下载新版本。
+
+## 第一次使用
+
+1. 下载并启动软件，在「库存查询」选择地区、门店、机型和容量。
+2. 点击「查询现货」查看结果。免费版可以完成这一步。
+3. 如需到货提醒，进入「设置 → 版本与购买」，购买 Standard 或 Pro 并领取授权。
+4. 回到库存查询，点击「准备添加监控」，勾选所需组合并确认添加。
+5. 在「我的提醒」启动引擎，配置桌面通知或自定义通知渠道，并保持软件与网络运行。
+6. 收到提醒后，打开 Apple 购买页确认最新库存并自行结账。
+
+## 购买、激活与换机
+
+**请从软件内发起购买**，以便把订单关联到当前设备；不要把旧打赏链接当成授权购买入口。
+
+1. 进入「设置 → 版本与购买」，选择 Standard 或 Pro。
+2. 软件打开 Stripe 结账页，完成一次性付款。
+3. 返回软件，点击 **「我已付款，领取授权」**。
+4. 授权成功后，该页面会显示付费方案和激活码。已有激活码也可在这里输入并激活。
+
+Standard 最多绑定一台设备，Pro 最多绑定两台。换机前，在旧设备的设置里点击「解绑本机」，再到新设备输入激活码。旧设备无法使用时，可联系开发者处理设备绑定。
+
+### 已付款但没有激活
+
+- 返回发起购买的同一台电脑，确认联网，再点击「我已付款，领取授权」。
+- Stripe 延迟确认或回调重试可能需要时间；**不要重复付款**。
+- 保留 Stripe 收据或付款编号、软件显示的订单编号和错误提示，联系开发者核实。
+- 开发者可以重试支付回调、手动补发授权、重置设备绑定或撤销异常授权。
+- 在公开 Issues 中只描述问题，**不要公开激活码、付款收据、邮箱或通知渠道密钥**。
+
+## 隐私与数据
+
+库存结果、门店与机型数据、提醒记录和设置保存在本机。敏感通知配置加密保存，备份文件仍应自行妥善保管。
+
+软件向 Apple 请求库存；外部通知只发往你配置的渠道。购买、领取及验证授权时，会向授权服务发送订单标识、机器指纹和授权凭证。Stripe 处理付款，软件不读取你的银行卡信息。没有账号注册流程，也不会替你登录 Apple ID。
+
+## 常见问题
+
+**为什么显示「未知」？**
+
+Apple 没有返回可确认的门店库存，或请求失败。未知不代表无货，可稍后重试并查看诊断。
+
+**为什么 Windows 和 Mac 结果不同？**
+
+先检查两台设备的地区、门店、SKU 和网络是否一致；Windows 会继承系统代理配置。网络出口及 Apple 响应范围可能不同，中国大陆跨城查询已支持直接查询。请保留错误提示或导出诊断报告。
+
+**免费版为什么不能添加提醒？**
+
+免费版用于手动查询；持续监控、桌面到货通知和外部通知属于 Standard / Pro 功能。
+
+**我能在云端一直监控吗？**
+
+不能。云端仅处理付款和授权，库存监控运行在你的电脑上。关机、睡眠或退出软件后监控停止。
+
+**提醒到了，为什么下单时没货？**
+
+库存可能在两次查询之间变化，也可能被其他用户买走。软件只能报告查询时的结果，不能锁定库存。
+
+**付款后会自动续费吗？**
+
+不会。Standard 为 HK$49.90 一次性，Pro 为 HK$99.90 一次性。
+
+**这是 Apple 官方软件吗？**
+
+不是。StockPing 是独立工具，与 Apple Inc. 无隶属关系。
+
+## English overview
+
+StockPing checks iPhone pickup availability at Apple retail stores on macOS and Windows. It supports Chinese Mainland, Hong Kong, Taiwan, Japan, Singapore and the United States, with Simplified Chinese, Traditional Chinese and English interfaces.
+
+Free supports manual and cross-city stock queries only. Adding alerts, automatic monitoring and restock notifications require a paid license:
+
+- **Standard: HK$49.90 once** — 50 store × SKU combinations, one device.
+- **Pro: HK$99.90 once** — 500 combinations, two devices.
+- Both include desktop notifications and all eight external channels. No recurring billing.
+
+Purchase from **Settings → Plans & purchase**, then return to the app and click **“I have paid — claim license”**. Keep your activation code private. Unlink an old device before moving to another computer. If payment succeeded but activation did not, keep the receipt, app order reference and error message, and contact the developer without paying again.
+
+Monitoring runs locally and requires the computer, app and network to remain active. StockPing cannot reserve stock or place orders. Apple responses may be incomplete; unknown availability is never treated as out of stock.
+
+[Website](https://stockping.plegle.uk) · [Latest release](https://github.com/hookybaby/stockping/releases/latest) · [Report a problem](https://github.com/hookybaby/stockping/issues)
