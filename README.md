@@ -6,17 +6,17 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.7**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.8**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
-0.2.7 统一监控数量：Standard 为 5 个、Pro 为 50 个门店 × SKU 组合。应用限制、三语言官网与版本说明同步更新。继续使用受支持的 Electron 44 引擎。Mac 安装包仅支持 Apple 芯片，约 107 MB，比 0.2.5 通用包减小约 32%。查询支持进度显示、取消和记忆上次选择；到货结果及时推送，失败的外部通知渠道最多重试三次；库存样本与通知流水分别保留。
+0.2.8 将更新检测合并到「关于」的应用名称与版本号旁，有新版本才提供下载；同时改进城市筛选、门店键盘勾选和设置控件的可访问性，修正免打扰时间框在 12 小时格式下的截断。城市切换只选择搜索匹配的门店；零结果仍可切换城市。Standard 继续为 5 个、Pro 为 50 个门店 × SKU 组合，价格与设备数量不变。继续使用受支持的 Electron 44 引擎，仅支持 Apple 芯片 Mac。查询支持进度显示、取消和记忆上次选择；到货结果及时推送，失败的外部通知渠道最多重试三次；库存样本与通知流水分别保留。
 
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.7-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.7/StockPing-0.2.7-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
-| Windows 安装版 | [StockPing.Setup.0.2.7.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.7/StockPing.Setup.0.2.7.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.7-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.7/StockPing-0.2.7-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.8-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.8/StockPing-0.2.8-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
+| Windows 安装版 | [StockPing.Setup.0.2.8.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.8/StockPing.Setup.0.2.8.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.8-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.8/StockPing-0.2.8-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
