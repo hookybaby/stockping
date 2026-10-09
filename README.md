@@ -6,23 +6,23 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.11**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.12**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
-0.2.11 在提醒列表解释购买顺序的用处，并在购买准备及登录入口旁明确说明：请提前在自己的浏览器登录 Apple 账户；本应用不读取、保存或代填 Apple 账号与密码。授权页的支持邮箱按钮改为帮助文字中的「联系支持」链接。购买准备默认不折抵换购、不加 AppleCare+，Standard 仍为 5 个、Pro 为 50 个监控组合。
+0.2.12 合并「我的提醒」中重复的版本限制提示，按免费版或付费版超额状态说明暂停数量和恢复方式。库存查询与购买准备统一登录说明：提前在自己的浏览器登录 Apple 账户可减少到货后的结账步骤；登录仅在 Apple 官方网页完成，本应用不会读取、保存或代填账号与密码。Standard 为 5 个、Pro 为 50 个监控组合，授权规则不变。
 
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.11-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.11/StockPing-0.2.11-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
-| Windows 安装版 | [StockPing.Setup.0.2.11.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.11/StockPing.Setup.0.2.11.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.11-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.11/StockPing-0.2.11-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.12-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.12/StockPing-0.2.12-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
+| Windows 安装版 | [StockPing.Setup.0.2.12.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.12/StockPing.Setup.0.2.12.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.12-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.12/StockPing-0.2.12-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
 Windows：运行安装包，按提示选择安装位置；或下载便携版直接运行。Windows 包暂未提供代码签名，系统可能显示 SmartScreen 提示。请只从本项目 Release 下载，并核对该版本的 SHA-256 校验文件。
 
-更新入口位于软件「关于 → 检查更新」。从 0.2.3 起，下载完成并成功打开安装包后，应用会保存数据并自动退出，按安装向导完成更新；macOS 需将新应用替换到「应用程序」。更新前建议在设置中导出备份。卸载、换机或切换便携版前，也请先备份数据。
+更新入口位于「关于」页面版本号旁的「检查更新」。下载完成并成功打开安装包后，应用会保存数据并自动退出，按安装向导完成更新；macOS 需将新应用替换到「应用程序」。更新前建议在设置中导出备份。卸载、换机或切换便携版前，也请先备份数据。
 
 ## 免费版、Standard 与 Pro
 
@@ -133,7 +133,8 @@ Apple 的库存随时可能变化。其他地区的可查询范围取决于 Appl
 3. 如需到货提醒，进入「设置 → 版本与购买」，购买 Standard 或 Pro，输入邮件中的激活码。
 4. 回到库存查询，点击「准备添加监控」，勾选所需组合并确认添加。
 5. 在「我的提醒」启动引擎，配置桌面通知或自定义通知渠道，并保持软件与网络运行。
-6. 收到提醒后，打开 Apple 购买页确认最新库存并自行结账。
+6. 在「购买准备」确认目标配置和门店，提前在自己的浏览器登录 Apple 账户，准备好收货信息和付款方式。
+7. 收到提醒后，打开 Apple 购买页确认最新库存并自行结账。
 
 联系开发者与购买售后：[support@plegle.uk](mailto:support@plegle.uk)。
 
@@ -158,9 +159,9 @@ Apple 的库存随时可能变化。其他地区的可查询范围取决于 Appl
 
 ## 隐私与数据
 
-库存结果、门店与机型数据、提醒记录和设置保存在本机。敏感通知配置加密保存，备份文件仍应自行妥善保管。 用户端备份中的凭据由系统安全存储加密，与授权服务端的数据库备份及密钥相互独立；普通设置、监控和历史仍为可读 JSON。系统安全加密不可用时，不会导出包含明文凭据的备份。
+库存结果、门店与机型数据、提醒记录和设置保存在本机。敏感通知配置加密保存，备份文件仍应自行妥善保管。用户端备份中的凭据由系统安全存储加密，与授权服务端的数据库备份及密钥相互独立；普通设置、监控和历史仍为可读 JSON。系统安全加密不可用时，不会导出包含明文凭据的备份。
 
-软件向 Apple 请求库存；外部通知只发往你配置的渠道。Stripe 收集付款邮箱并处理付款，软件不读取银行卡信息。授权服务保存付款与邮箱用于发码和售后；Oqumail 接收收件邮箱及激活码以发送邮件。激活和验证时，软件向授权服务发送激活码、机器指纹和授权凭证。没有账号注册流程，也不会替你登录 Apple ID。
+软件向 Apple 请求库存；外部通知只发往你配置的渠道。Stripe 收集付款邮箱并处理付款，软件不读取银行卡信息。授权服务保存付款与邮箱用于发码和售后；Oqumail 接收收件邮箱及激活码以发送邮件。激活和验证时，软件向授权服务发送激活码、机器指纹和授权凭证。不需要注册 StockPing 账号。Apple 账户登录仅在你自己的浏览器和 Apple 官方网页完成；本应用不会读取、保存或代填 Apple 账号与密码。
 
 ## 常见问题
 
@@ -171,6 +172,10 @@ Apple 没有返回可确认的门店库存，或请求失败。未知不代表�
 **为什么 Windows 和 Mac 结果不同？**
 
 先检查两台设备的地区、门店、SKU 和网络是否一致；Windows 会继承系统代理配置。网络出口及 Apple 响应范围可能不同，中国大陆跨城查询已支持直接查询。请保留错误提示或导出诊断报告。
+
+**提前登录 Apple 账户会泄漏密码吗？**
+
+点击登录按钮只会在你自己的浏览器打开 Apple 官方登录页。StockPing 不接触登录表单，不读取、保存或代填账号与密码，也不接管浏览器会话。提前登录可减少到货后结账时的登录步骤；请在 Apple 官方网页完成登录。
 
 **免费版为什么不能添加提醒？**
 
@@ -208,4 +213,4 @@ Monitoring runs locally and requires the computer, app and network to remain act
 
 [Website](https://stockping.plegle.uk) · [Latest release](https://github.com/hookybaby/stockping/releases/latest) · [Report a problem](https://github.com/hookybaby/stockping/issues)
 
-Version 0.2.2: purchase on the website or in the app, enter your email at Stripe checkout, and activate with the emailed code. Each newly purchased Standard or Pro code binds to one computer at a time. Unbind before moving it. Historical two-device licenses retain their device allowance.
+Version **0.2.12** supports Apple silicon Macs running macOS 13 or later and Windows 10 / 11 x64. Intel Macs are not supported. Sign in to your Apple account ahead of time in your own browser for faster checkout. Sign-in takes place only on Apple’s official website; StockPing never reads, stores or fills in your Apple account or password.
