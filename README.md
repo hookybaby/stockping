@@ -6,17 +6,17 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.8**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.9**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
-0.2.8 将更新检测合并到「关于」的应用名称与版本号旁，有新版本才提供下载；同时改进城市筛选、门店键盘勾选和设置控件的可访问性，修正免打扰时间框在 12 小时格式下的截断。城市切换只选择搜索匹配的门店；零结果仍可切换城市。Standard 继续为 5 个、Pro 为 50 个门店 × SKU 组合，价格与设备数量不变。继续使用受支持的 Electron 44 引擎，仅支持 Apple 芯片 Mac。查询支持进度显示、取消和记忆上次选择；到货结果及时推送，失败的外部通知渠道最多重试三次；库存样本与通知流水分别保留。
+0.2.9 增加购买准备、监控组合的购买优先级、通知直达准确配置与多配置到货选择。手机渠道消息附带配置购买链接，Bark 点击通知可打开购买页。中国大陆提供试验性浏览器辅助书签，按明确保存的预设辅助选择门店、免折抵换购、免 AppleCare+，可选加入购物袋；最终订单和付款仍由用户确认。激活失败提示改为红色醒目显示。Standard 继续为 5 个、Pro 为 50 个门店 × SKU 组合，价格与设备数量不变。
 
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.8-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.8/StockPing-0.2.8-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
-| Windows 安装版 | [StockPing.Setup.0.2.8.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.8/StockPing.Setup.0.2.8.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.8-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.8/StockPing-0.2.8-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.9-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.9/StockPing-0.2.9-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
+| Windows 安装版 | [StockPing.Setup.0.2.9.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.9/StockPing.Setup.0.2.9.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.9-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.9/StockPing-0.2.9-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
@@ -93,6 +93,10 @@ Apple 的库存随时可能变化。其他地区的可查询范围取决于 Appl
 - 支持提醒冷却时间，减少重复推送。
 - 支持跨午夜的免打扰时段：继续记录库存变化，暂停通知和自动打开购买页。
 - 可设置发现到货时自动打开购买页；最终下单仍由用户在浏览器完成。
+- 点击单项到货通知直达对应配置；同时到货多项时可选择具体型号与门店。
+- 在监控行设置购买优先级（1 最高，未设置排后）；同一批结果按优先级选择自动打开的配置，不等待其他城市。
+- 手机消息包含各配置购买链接；Bark 通知点击打开优先配置。
+- 「购买准备」可提前打开 Apple 登录页、购物袋和准确配置，保存明确购买预设并导出辅助书签。书签目前仅支持中国大陆、一个配置与一家门店；无货、型号不符、门店不符或页面结构变化时停止并提示手动操作。加入购物袋不等于预留库存。
 
 通知渠道可能需要你自行创建机器人、配置 SMTP 或购买第三方服务；这些服务的费用不包含在软件价格中。
 
