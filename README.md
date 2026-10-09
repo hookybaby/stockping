@@ -6,17 +6,17 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.6**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.7**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
-0.2.6 改用受支持的 Electron 44 引擎。Mac 安装包仅支持 Apple 芯片，约 107 MB，比上一版通用包减小约 32%。查询支持进度显示、取消和记忆上次选择；到货结果及时推送，失败的外部通知渠道最多重试三次；库存样本与通知流水分别保留。
+0.2.7 统一监控数量：Standard 为 5 个、Pro 为 50 个门店 × SKU 组合。应用限制、三语言官网与版本说明同步更新。继续使用受支持的 Electron 44 引擎。Mac 安装包仅支持 Apple 芯片，约 107 MB，比 0.2.5 通用包减小约 32%。查询支持进度显示、取消和记忆上次选择；到货结果及时推送，失败的外部通知渠道最多重试三次；库存样本与通知流水分别保留。
 
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.6-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.6/StockPing-0.2.6-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
-| Windows 安装版 | [StockPing.Setup.0.2.6.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.6/StockPing.Setup.0.2.6.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.6-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.6/StockPing-0.2.6-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.7-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.7/StockPing-0.2.7-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
+| Windows 安装版 | [StockPing.Setup.0.2.7.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.7/StockPing.Setup.0.2.7.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.7-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.7/StockPing-0.2.7-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
@@ -35,7 +35,7 @@ Windows：运行安装包，按提示选择安装位置；或下载便携版直�
 | 中国大陆跨城市查询 | 支持，无需代理 | 支持，无需代理 | 支持，无需代理 |
 | 门店、机型与 SKU 管理 | 支持 | 支持 | 支持 |
 | 添加、启用和运行到货提醒 | 不支持 | 支持 | 支持 |
-| 监控组合数量上限 | 0 | **50** | **500** |
+| 监控组合数量上限 | 0 | **5** | **50** |
 | 桌面到货通知 | 不支持 | 支持 | 支持 |
 | 八个外部通知渠道 | 可保存未启用配置 | 全部支持 | 全部支持 |
 | 同时授权设备数 | — | **1 台** | **1 台** |
@@ -142,7 +142,7 @@ Apple 的库存随时可能变化。其他地区的可查询范围取决于 Appl
 3. 检查收件箱和垃圾邮件，在「设置 → 版本与购买」输入激活码。
 4. 首次激活时才绑定电脑，不需要注册账号。
 
-**新购买的 Standard 和 Pro 都是一枚码同时绑定一台电脑。** 换机前在旧电脑点击「解绑本机」，再到新电脑输入同一个码。旧电脑无法使用时，联系支持核实购买后重置绑定。历史已购买授权保留原权益。旧版已创建的订单，在新版中仍可通过「恢复旧版购买」领取。
+**新购买的 Standard 和 Pro 都是一枚码同时绑定一台电脑。** 换机前在旧电脑点击「解绑本机」，再到新电脑输入同一个码。旧电脑无法使用时，联系支持核实购买后重置绑定。历史双设备授权保留原设备数量。旧版已创建的订单，在新版中仍可通过「恢复旧版购买」领取。
 
 ### 已付款但没有收到码或激活失败
 
@@ -194,8 +194,8 @@ StockPing checks iPhone pickup availability at Apple retail stores on macOS and 
 
 Free supports manual and cross-city stock queries only. Adding alerts, automatic monitoring and restock notifications require a paid license:
 
-- **Standard: HK$49.90 once** — 50 store × SKU combinations, one device.
-- **Pro: HK$99.90 once** — 500 combinations, one device.
+- **Standard: HK$49.90 once** — 5 store × SKU combinations, one device.
+- **Pro: HK$99.90 once** — 50 combinations, one device.
 - Both include desktop notifications and all eight external channels. No recurring billing.
 
 Purchase from the website or **Settings → Plans & purchase**, enter your email at Stripe checkout, then activate in the app with the emailed code. Keep the code private. Unbind the old computer before moving it. If payment succeeded but activation did not, keep the Stripe receipt, payment reference and error message, and contact [support@plegle.uk](mailto:support@plegle.uk) without paying again.
@@ -204,4 +204,4 @@ Monitoring runs locally and requires the computer, app and network to remain act
 
 [Website](https://stockping.plegle.uk) · [Latest release](https://github.com/hookybaby/stockping/releases/latest) · [Report a problem](https://github.com/hookybaby/stockping/issues)
 
-Version 0.2.2: purchase on the website or in the app, enter your email at Stripe checkout, and activate with the emailed code. Each newly purchased Standard or Pro code binds to one computer at a time. Unbind before moving it. Existing purchases retain their original rights.
+Version 0.2.2: purchase on the website or in the app, enter your email at Stripe checkout, and activate with the emailed code. Each newly purchased Standard or Pro code binds to one computer at a time. Unbind before moving it. Historical two-device licenses retain their device allowance.
