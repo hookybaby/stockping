@@ -32,7 +32,12 @@ Windows：运行安装包，按提示选择安装位置；或下载便携版直�
 
 更新入口位于「关于」页面版本号旁的「检查更新」。下载完成并成功打开安装包后，应用会保存数据并自动退出，按安装向导完成更新；macOS 需将新应用替换到「应用程序」。更新前建议在设置中导出备份。卸载、换机或切换便携版前，也请先备份数据。
 
-浏览器扩展另需安装一次：[官网安装说明](https://stockping.plegle.uk/#browser-helper)。Safari 辅助应用支持 Apple 芯片和 Intel Mac，但库存查询主应用目前仍仅支持 Apple 芯片。
+浏览器扩展 **1.1.0**（需单独安装）：
+
+- [Chrome / Edge 扩展下载](https://stockping.plegle.uk/StockPing-Chrome-Edge-Helper-1.1.0.zip)：解压后安装；更新时覆盖原扩展文件夹，并在扩展管理页点击“重新加载”。
+- [Safari 扩展下载](https://stockping.plegle.uk/StockPing-Safari-Helper-1.1.0.zip)：解压后将 StockPing Purchase Helper.app 放入“应用程序”；更新时替换同名应用，再在 Safari 设置中启用扩展并允许访问 Apple 网站。
+
+[官网安装说明](https://stockping.plegle.uk/#browser-helper)。Safari 辅助应用支持 Apple 芯片和 Intel Mac，macOS 13 及以上。为兼容旧版主程序的更新识别，扩展 ZIP 由官网提供，不列为主程序安装包附件。库存查询主应用目前仍仅支持 Apple 芯片。
 
 ## 免费版、Standard 与 Pro
 
