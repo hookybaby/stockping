@@ -6,7 +6,7 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.15**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.16**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
 0.2.13 加强授权复检、设备密钥绑定与时钟回拨检测。启动及正常每小时联网验证，凭证有效 3 小时，另有 24 小时断网宽限；到期暂停付费监控并保留数据。Standard 为 5 个、Pro 为 50 个监控组合，一次性购买价格不变。
 
@@ -14,19 +14,23 @@ StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可�
 
 0.2.15 修复查询结果表格右侧容量列被遮挡的问题，门店名称随列宽换行，四个容量列可同时查看。
 
+0.2.16 支持 Chrome、Edge 和 Safari 购买准备扩展：一次安装后，点击“购买此配置”自动选择不换购、不加 AppleCare+，并定位加购按钮。
+
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.15-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.15/StockPing-0.2.15-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
-| Windows 安装版 | [StockPing.Setup.0.2.15.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.15/StockPing.Setup.0.2.15.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.15-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.15/StockPing-0.2.15-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.16-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.16/StockPing-0.2.16-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
+| Windows 安装版 | [StockPing.Setup.0.2.16.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.16/StockPing.Setup.0.2.16.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.16-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.16/StockPing-0.2.16-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
 Windows：运行安装包，按提示选择安装位置；或下载便携版直接运行。Windows 包暂未提供代码签名，系统可能显示 SmartScreen 提示。请只从本项目 Release 下载，并核对该版本的 SHA-256 校验文件。
 
 更新入口位于「关于」页面版本号旁的「检查更新」。下载完成并成功打开安装包后，应用会保存数据并自动退出，按安装向导完成更新；macOS 需将新应用替换到「应用程序」。更新前建议在设置中导出备份。卸载、换机或切换便携版前，也请先备份数据。
+
+浏览器扩展另需安装一次：[官网安装说明](https://stockping.plegle.uk/#browser-helper)。Safari 辅助应用支持 Apple 芯片和 Intel Mac，但库存查询主应用目前仍仅支持 Apple 芯片。
 
 ## 免费版、Standard 与 Pro
 
@@ -48,7 +52,7 @@ Windows：运行安装包，按提示选择安装位置；或下载便携版直�
 
 Standard 和 Pro 的通知渠道相同；Pro 提供更多监控组合。Standard 升至 Pro 目前需要单独购买 HK$99.90 的 Pro 授权，**不自动抵扣 Standard 费用**。
 
-如果解绑、退款、授权撤销或离线宽限期结束，软件会回到免费版。已有提醒和历史数据保留，但自动监控与通知暂停；重新取得有效付费授权后才能恢复。应用启动和正常每小时联网验证。签名凭证有效 3 小时，另有 24 小时断网宽限，即最后成功验证后最长 27 小时；恢复网络后可在设置中重新验证，无需再次购买。请升级至 0.2.15，以获得新的设备校验和授权期限规则。
+如果解绑、退款、授权撤销或离线宽限期结束，软件会回到免费版。已有提醒和历史数据保留，但自动监控与通知暂停；重新取得有效付费授权后才能恢复。应用启动和正常每小时联网验证。签名凭证有效 3 小时，另有 24 小时断网宽限，即最后成功验证后最长 27 小时；恢复网络后可在设置中重新验证，无需再次购买。请升级至 0.2.16，以获得新的设备校验和授权期限规则。
 
 ## 软件功能
 
@@ -220,4 +224,4 @@ Monitoring runs locally and requires the computer, app and network to remain act
 
 From 0.2.13, licenses are checked on startup and normally hourly. Signed credentials last three hours, followed by a 24-hour offline grace period; monitoring pauses after expiry and keeps your data. Verification does not charge you again.
 
-Version **0.2.15** supports Apple silicon Macs running macOS 13 or later and Windows 10 / 11 x64. Intel Macs are not supported. Sign in to your Apple account ahead of time in your own browser for faster checkout. Sign-in takes place only on Apple’s official website; StockPing never reads, stores or fills in your Apple account or password.
+Version **0.2.16** supports Apple silicon Macs running macOS 13 or later and Windows 10 / 11 x64. Intel Macs are not supported. Sign in to your Apple account ahead of time in your own browser for faster checkout. Sign-in takes place only on Apple’s official website; StockPing never reads, stores or fills in your Apple account or password.
