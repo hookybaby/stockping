@@ -6,7 +6,7 @@
 
 StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可以手动查询；购买 Standard 或 Pro 后，可持续监控你选择的「门店 × 机型配置」，并在发现到货时发送提醒。它在你的电脑上运行，不代购、不自动提交订单，也不保证库存保留到结账。
 
-当前版本：**0.2.16**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
+当前版本：**0.2.17**。免费版仅提供查询，添加和运行到货提醒需要付费授权。
 
 0.2.13 加强授权复检、设备密钥绑定与时钟回拨检测。启动及正常每小时联网验证，凭证有效 3 小时，另有 24 小时断网宽限；到期暂停付费监控并保留数据。Standard 为 5 个、Pro 为 50 个监控组合，一次性购买价格不变。
 
@@ -16,13 +16,15 @@ StockPing 帮你查询指定 Apple Store 的 iPhone 取货库存。免费版可�
 
 0.2.16 支持 Chrome、Edge 和 Safari 购买准备扩展：一次安装后，点击“购买此配置”自动选择不换购、不加 AppleCare+，并定位加购按钮。
 
+0.2.17 配合扩展 1.1.0，新增可选的自动加购和结账入口。沿用有货门店，多门店先选择；每步等待最多 2 分钟，加购只执行一次。购物袋有其他商品或门店不匹配时暂停，登录、取货信息、提交订单和付款由你完成。大陆流程已逐步实测；其他地区有差异，无法识别时需手动继续，台湾和新加坡的自动流程尚未支持。
+
 ## 下载与安装
 
 | 平台 | 下载文件 | 适用设备 |
 | --- | --- | --- |
-| macOS | [StockPing-0.2.16-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.16/StockPing-0.2.16-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
-| Windows 安装版 | [StockPing.Setup.0.2.16.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.16/StockPing.Setup.0.2.16.exe) | Windows 10 / 11，64 位 x64 |
-| Windows 便携版 | [StockPing-0.2.16-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.16/StockPing-0.2.16-portable.exe) | 无需安装，适合临时使用 |
+| macOS | [StockPing-0.2.17-arm64.dmg](https://github.com/hookybaby/stockping/releases/download/v0.2.17/StockPing-0.2.17-arm64.dmg) | 仅 Apple 芯片（M 系列），macOS 13 及以上；不支持 Intel Mac |
+| Windows 安装版 | [StockPing.Setup.0.2.17.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.17/StockPing.Setup.0.2.17.exe) | Windows 10 / 11，64 位 x64 |
+| Windows 便携版 | [StockPing-0.2.17-portable.exe](https://github.com/hookybaby/stockping/releases/download/v0.2.17/StockPing-0.2.17-portable.exe) | 无需安装，适合临时使用 |
 
 macOS：打开 DMG，将 StockPing 拖入「应用程序」，再从「应用程序」启动。macOS 应用及 DMG 均完成 Developer ID 签名和 Apple 公证。
 
@@ -224,4 +226,4 @@ Monitoring runs locally and requires the computer, app and network to remain act
 
 From 0.2.13, licenses are checked on startup and normally hourly. Signed credentials last three hours, followed by a 24-hour offline grace period; monitoring pauses after expiry and keeps your data. Verification does not charge you again.
 
-Version **0.2.16** supports Apple silicon Macs running macOS 13 or later and Windows 10 / 11 x64. Intel Macs are not supported. Sign in to your Apple account ahead of time in your own browser for faster checkout. Sign-in takes place only on Apple’s official website; StockPing never reads, stores or fills in your Apple account or password.
+Version **0.2.17** supports Apple silicon Macs running macOS 13 or later and Windows 10 / 11 x64. Intel Macs are not supported. Sign in to your Apple account ahead of time in your own browser for faster checkout. Sign-in takes place only on Apple’s official website; StockPing never reads, stores or fills in your Apple account or password.
